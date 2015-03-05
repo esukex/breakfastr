@@ -1,7 +1,10 @@
 <h1>Latest Pastries fresh out of the oven!</h1>
 <!-- ################################################################################################## -->
-<% @pastries.each do | pastry | %>
-	<p><%= pastry[:name] %> </p>
-	<p><%= pastry[:price_in_pence] %> </p>
-<% end %>
-  
+<section class="pastries">
+	<% @pastries.each do | pastry | %>
+		<div class="pastry">
+			<p><%= link_to pastry[:name],pastry_path(pastry) %> </p>
+			<p><%= pastry[:price_in_pence] %> </p>
+		</div>
+	<% end %>
+</section>
