@@ -9,13 +9,13 @@
 	<body>
 		<header>
 			<%= link_to "Breakfastr", root_path %>
-	<!--		if logged_in?	-->
-			<%# link_to "Add a pastry", new_user_pastry_path(current_user) %>
-			<%# link_to "Log out", session_path, method: :delete %>
-	<!--		else-->
-			<%# link_to "Log in", new_session_path %>
-			<%# link_to "Sign Up", new_user_path %>
-			<%# link_to "Breakfastr", root_path %>
+			<% if logged_in? %>	
+				<%= link_to "Add a pastry", new_user_pastry_path(current_user) %>
+				<%= link_to "Log out", session_path, method: :delete %>
+			<% else %>
+				<%= link_to "Log in", new_session_path %>
+				<%= link_to "Sign Up", new_user_path %>
+			<% end %>
 		</header>
 
 		<% flash.each do | k,v | %>
